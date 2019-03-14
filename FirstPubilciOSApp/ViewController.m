@@ -17,6 +17,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    NSString *path = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"image.jpg"];
+    UIImage *image = [[UIImage alloc] initWithContentsOfFile:path];
+    
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.view.frame];
+    [imageView setImage:image];
+    
+    [self.view insertSubview:imageView atIndex:0];
 }
 
 
